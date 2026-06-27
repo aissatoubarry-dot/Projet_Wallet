@@ -65,4 +65,12 @@
 
     }
 
+    function faireDepotController(): void{
+
+        $telephone = (int) saisie("Donnez le numero du wallet : ");
+        $montant = (int) saisie("Donnez le montant a deposer : ");
+        faireDepotService($telephone, $montant);
+
+    }
+
 ?>

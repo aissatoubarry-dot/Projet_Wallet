@@ -10,4 +10,21 @@
         $wallets[] = $newWallet;
     }
 
+    function trouverWalletParTelephone(int $telephone): int{
+
+        global $wallets;
+
+        foreach($wallets as $index => $wallet){
+
+            if($wallet['telephone'] === $telephone){
+
+                return $index;
+                
+            }
+
+        }
+
+        return -1;
+    }
+
 ?>

@@ -18,6 +18,7 @@
                 break;
             case 2: 
                 afficher("Vous voulez faire un depot \n") ; 
+                faireDepotController();
                 break;
             case 3: 
                 afficher("Vous voulez faire un retrait \n"); 

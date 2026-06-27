@@ -24,4 +24,33 @@
                 
     }
 
+
+    function faireDepotService(int $telephone, int $montant): void{
+
+        global $wallets;
+
+        $index = trouverWalletParTelephone($telephone);
+
+        if($index == -1){
+
+            afficher("Ce numero n'existe pas dans le wallet!!!");
+            return;
+
+        }
+
+        if($montant <= 0){
+
+            afficher("Le montant doit etre positif!!!");
+            return;
+
+        }
+
+        $wallets[$index]['solde'] += $montant;
+
+        afficher("Depot effectué avec succès!!!");
+
+        afficher("Nouveau solde : " .$wallets[$index]['solde']);
+
+    }
+
 ?>
