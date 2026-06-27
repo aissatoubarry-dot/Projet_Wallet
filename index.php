@@ -1,33 +1,35 @@
 <?php
+    require_once 'controller.php';
     
     do {
 
-        echo(" Menu Distributeur\n ");
-        echo("1. Créer Wallet \n");
-        echo("2. Faire Dépôt \n");
-        echo("3. Faire Retrait \n");
-        echo("4. Lister les Transactions \n");
-        echo("0. Quitter \n");
-        $choix = readline("Entrez votre choix:  \n");
+        afficher(" Menu Distributeur\n ");
+        afficher("1. Créer Wallet \n");
+        afficher("2. Faire Dépôt \n");
+        afficher("3. Faire Retrait \n");
+        afficher("4. Lister les Transactions \n");
+        afficher("0. Quitter \n");
+        $choix = saisie("Entrez votre choix:  \n");
 
         switch ($choix) {
             case 1: 
-                echo("Vous voulez creer un wallet \n") ; 
+                afficher("Vous voulez creer un wallet \n") ; 
+                creerWalletController();
                 break;
             case 2: 
-                echo("Vous voulez faire un depot \n") ; 
+                afficher("Vous voulez faire un depot \n") ; 
                 break;
             case 3: 
-                echo("Vous voulez faire un retrait \n"); 
+                afficher("Vous voulez faire un retrait \n"); 
                 break;
             case 4: 
-                echo("Vous voulez lister les transactions \n") ; 
+                afficher("Vous voulez lister les transactions \n") ; 
                 break;
             case 0: 
-                echo( "Aurevoir! \n"); 
+                afficher( "Aurevoir! \n"); 
                 break;
             default: 
-                echo ("Choix invalide, veuillez réessayer \n");
+                afficher ("Choix invalide, veuillez réessayer \n");
                 break;
         }
 
