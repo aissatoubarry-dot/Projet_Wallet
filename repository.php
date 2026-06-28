@@ -19,17 +19,14 @@
 
         global $wallets;
 
-        foreach($wallets as $index => $wallet){
+        $resultat = array_filter($wallets, fn($wallet) => $wallet['telephone'] === $telephone);
 
-            if($wallet['telephone'] === $telephone){
-
-                return $index;
-                
-            }
-
+        if (empty($resultat)) {
+            return -1;
         }
 
-        return -1;
+        return array_key_first($resultat);
+
     }
 
     function ajouterTransaction(string $type, int $montant, int $frais, int $indexClient): void{

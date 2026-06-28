@@ -1,13 +1,12 @@
 <?php
 
-    function unicite(array $wallets, string $champ, $valeur):int{
+    function unicite(array $wallets, string $champ, $valeur): int{
 
-        foreach ($wallets as $index => $wallet) {
-            if ($wallet[$champ] === $valeur) {
-                return $index;
-            }
+        $resultat = array_filter($wallets, fn($wallet) => $wallet[$champ] === $valeur);
+        if (empty($resultat)) {
+            return -1;
         }
-        return -1;
+        return array_key_first($resultat);
     }
 
     function verifierLongueur(int $valeur, int $taille = 9):bool{

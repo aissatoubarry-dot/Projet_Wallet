@@ -84,7 +84,7 @@
 
     function afficherTransaction(array $transactions,array $wallets): void{
 
-        foreach($transactions as $transaction){
+        array_map(function($transaction) use ($wallets) {
 
             afficher("Type : ".$transaction['type']);
 
@@ -98,6 +98,8 @@
 
             afficher("----------------------");
         }
+        
+        ,$transactions);
 
     }
 
