@@ -73,4 +73,12 @@
 
     }
 
+    function faireRetraitController(): void{
+
+        $telephone = (int) saisie("Donnez le numero du wallet : " );
+        $montant = (int) saisie("Donnez le montant a retirer : ");
+        faireRetraitService($telephone, $montant);
+
+    }
+
 ?>
