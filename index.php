@@ -22,6 +22,7 @@
                 break;
             case 3: 
                 afficher("Vous voulez faire un retrait \n"); 
+                faireRetraitController();
                 break;
             case 4: 
                 afficher("Vous voulez lister les transactions \n") ; 
