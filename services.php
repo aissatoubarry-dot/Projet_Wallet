@@ -47,11 +47,13 @@
 
         $wallets[$index]['solde'] += $montant;
 
+        ajouterTransaction('depot', $montant, 0, $index);
+
         afficher("Depot effectué avec succès!!!");
 
         afficher("Nouveau solde : " .$wallets[$index]['solde']);
 
-    }
+    }  
 
 
     function calculerFrais(int $montant): int{
@@ -112,6 +114,8 @@
         }
 
         $wallets[$index]['solde'] -= $montantTotal;
+        ajouterTransaction('retrait', $montant, $frais, $index);
+
 
         afficher("Retrait effectue avec succes");
 

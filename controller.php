@@ -81,4 +81,32 @@
 
     }
 
+
+    function afficherTransaction(array $transactions,array $wallets): void{
+
+        foreach($transactions as $transaction){
+
+            afficher("Type : ".$transaction['type']);
+
+            afficher("Montant : ".$transaction['montant']);
+
+            afficher("Frais : ".$transaction['frais']);
+
+            $indexClient = $transaction['indexClient'];
+
+            afficher("Titulaire : ".$wallets[$indexClient]['client']);
+
+            afficher("----------------------");
+        }
+
+    }
+
+    function listerTransactionsController(): void{
+
+        global $transactions, $wallets;
+
+        afficherTransaction($transactions, $wallets);
+
+    }
+
 ?>
