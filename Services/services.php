@@ -1,6 +1,15 @@
 <?php
-    require_once 'repository.php';
-    require_once 'validator.php';
+    namespace Services;
+
+    use function Repository\creerWallet;
+    use function Repository\trouverWalletParTelephone;
+    use function Repository\ajouterTransaction;
+    use function Validator\unicite;
+    use function Fonctions\afficher;
+    
+    require_once __DIR__.'/../Fonctions/fonctions.php';
+    require_once __DIR__.'/../Repository/repository.php';
+    require_once __DIR__.'/../Validator/validator.php';
 
     function creerWalletService ( array $wallet):void{
         global $wallets;

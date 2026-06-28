@@ -1,6 +1,16 @@
 <?php
-    require_once 'controller.php';
+    require_once 'Controller/controller.php';   
+    require_once 'Fonctions/fonctions.php';
+
+
+    use function Controller\creerWalletController;
+    use function Controller\faireDepotController;
+    use function Controller\faireRetraitController;
+    use function Controller\listerTransactionsController;
+    use function Fonctions\afficher;
+    use function Fonctions\saisie;
     
+
     do {
 
         afficher(" Menu Distributeur\n ");
