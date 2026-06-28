@@ -26,6 +26,7 @@
                 break;
             case 4: 
                 afficher("Vous voulez lister les transactions \n") ; 
+                listerTransactionsController();
                 break;
             case 0: 
                 afficher( "Aurevoir! \n"); 
