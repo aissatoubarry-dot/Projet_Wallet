@@ -1,14 +1,18 @@
 <?php
+    namespace Controller;
 
-    require_once 'services.php';
+    use function Services\creerWalletService;
+    use function Services\faireDepotService;
+    use function Services\faireRetraitService;
+    use function Validator\verifierLongueur;
+    use function Validator\verifierPrefixe;
+    use function Fonctions\saisie;
+    use function Fonctions\afficher;
 
-    function saisie(string $message): string{
-        return readline($message);
-    }
-
-    function afficher(string $message): void{
-        echo $message . "\n";
-    }
+    require_once __DIR__.'/../Fonctions/fonctions.php';
+    require_once __DIR__.'/../Services/services.php';
+    require_once __DIR__.'/../Validator/validator.php';
+   
 
     function afficherWallet(array $wallets):void{
 
@@ -84,7 +88,7 @@
 
     function afficherTransaction(array $transactions,array $wallets): void{
 
-        foreach($transactions as $transaction){
+        array_map(function($transaction) use ($wallets) {
 
             afficher("Type : ".$transaction['type']);
 
@@ -98,6 +102,8 @@
 
             afficher("----------------------");
         }
+        
+        ,$transactions);
 
     }
 
