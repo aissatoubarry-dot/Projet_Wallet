@@ -1,5 +1,6 @@
 <?php
-
+    namespace Validator;
+    
     function unicite(array $wallets, string $champ, $valeur): int{
 
         $resultat = array_filter($wallets, fn($wallet) => $wallet[$champ] === $valeur);
